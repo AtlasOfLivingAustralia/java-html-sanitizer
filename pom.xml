@@ -4,7 +4,7 @@
   <artifactId>owasp-java-html-sanitizer</artifactId>
   <packaging>jar</packaging>
 
-  <version>20160203.2-SNAPSHOT</version>
+  <version>20160203.1-ALA</version>
   <name>OWASP Java HTML Sanitizer</name>
   <description>
 A fast and easy to configure HTML Sanitizer written in Java which
