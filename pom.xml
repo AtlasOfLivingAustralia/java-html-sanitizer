@@ -224,14 +224,16 @@ application while protecting against XSS.
       <!--
           We depend on 11 because it is the last which works with JDK 5
           which we want to link against. 
+          ALA: Lock guava to 11.0 for Grails 2.5 + Release plugin
       -->
-      <version>[11.0,)</version>
+      <version>11.0</version>
     </dependency>
 
+    <!-- ALA lock commons-codec to 1.6 for Grails 2.5 + release plugin -->
     <dependency>
       <groupId>commons-codec</groupId>
       <artifactId>commons-codec</artifactId>
-      <version>[1.4,)</version>
+      <version>1.6</version>
     </dependency>
 
     <!-- http://gleclaire.github.io/findbugs-maven-plugin/usage.html
