@@ -6,7 +6,7 @@
     <relativePath>parent</relativePath>
     <groupId>com.googlecode.owasp-java-html-sanitizer</groupId>
     <artifactId>parent</artifactId>
-    <version>20160526.2-SNAPSHOT</version>
+    <version>20160526.1-ALA</version>
   </parent>
 
   <name>OWASP Java HTML Sanitizer</name>
@@ -71,9 +71,11 @@
       -->
       <version>11.0</version>
     </dependency>
+    <!-- ALA scope commons-codec to test as it's not used in main code -->
     <dependency>
       <groupId>commons-codec</groupId>
       <artifactId>commons-codec</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.code.findbugs</groupId>
