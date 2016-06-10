@@ -2,6 +2,14 @@
 
 Most recent at top.
 
+  * Release 20160526.1
+    * Added support for pre-processors and post-processors so that there
+      is no need for clients to do textual search/replace on the
+      untrusted input or the trusted output.
+  * Release 20160413.1
+    * Integrated support for Safe HTML Types and the Fences enforcer to allow
+      the sanitizer to produce safe-contract-types.
+    * Fixed bug 52: `<a>` can contain `<div>` per HTML5 rules.
   * 1.1.  Fixed bug that was causing end tags that matched dropped open tags to be mismatched.
     Changed escaping of HTML text nodes to prevent [client-side template systems](docs/client-side-templates.md) from mistakenly finding executable code in sanitized HTML fragments.
   * Migrated from SVN repo on code.google.com to Github.  Following numbers are SVN revision numbers

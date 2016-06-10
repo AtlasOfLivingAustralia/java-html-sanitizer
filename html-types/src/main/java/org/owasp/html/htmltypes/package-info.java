@@ -1,4 +1,4 @@
-// Copyright (c) 2013, Mike Samuel
+// Copyright (c) 2016, Mike Samuel
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -26,37 +26,12 @@
 // ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-package org.owasp.html;
-
-import java.io.IOException;
-
-import junit.framework.TestCase;
-
-import org.junit.Test;
-import org.owasp.html.examples.UrlTextExample;
-
-@SuppressWarnings("javadoc")
-public final class UrlTextExampleTest extends TestCase {
-
-  @Test
-  public static void testExample() throws IOException {
-    StringBuilder out = new StringBuilder();
-    UrlTextExample.run(
-        out,
-        "<a href='//www.example.com/'>Examples<br> like this</a> are fun!\n",
-        "<img src='https://www.example.com/example.png'> are fun!\n",
-        "<a href='www.google.com'>This</a> is not a link to google!"
-        );
-    assertEquals(
-        ""
-        + "<a href=\"//www.example.com/\">Examples<br /> like this</a>"
-        + " - www.example.com are fun!\n"
-        + "\n"
-        + "<img src=\"https://www.example.com/example.png\" />"
-        + " - www.example.com are fun!\n"
-        + "\n"
-        + "<a href=\"www.google.com\">This</a> is not a link to google!",
-        out.toString());
-  }
-
-}
+/**
+ * Wraps HTML policy builders to produce
+ * <a href="https://github.com/google/safe-html-types/blob/master/doc/safehtml-types.md">Safe HTML</a>.
+ * <p>
+ * @see <a href="https://github.com/OWASP/java-html-sanitizer/blob/master/docs/credits.md">usage</a>
+ * @author Mike Samuel (mikesamuel@gmail.com)
+ */
+@javax.annotation.ParametersAreNonnullByDefault
+package org.owasp.html.htmltypes;

@@ -4,13 +4,11 @@
 
 If you are using Maven then follow the [maven](maven.md) directions to
 add a dependency.  Otherwise,
-[download prebuilt jars](https://search.maven.org/#browse%7C-1545181754)
+[download prebuilt jars](https://search.maven.org/#artifactdetails%7Ccom.googlecode.owasp-java-html-sanitizer%7Cowasp-java-html-sanitizer%7C20160413.1%7Cjar)
 or `git clone git@github.com:OWASP/java-html-sanitizer.git` and build
 the latest source.
 
-Unless maven is managing your
-[CLASSPATH](http://download.oracle.com//javase/1.3/docs/tooldocs/win32/classpath.html)
-for you, you need to add both `owasp-java-html-sanitizer.jar` and the
+Unless maven is managing your CLASSPATH for you, you need to add both `owasp-java-html-sanitizer.jar` and the
 Guava JAR.
 
 Once you have your CLASSPATH set up correctly with the relevant JARs

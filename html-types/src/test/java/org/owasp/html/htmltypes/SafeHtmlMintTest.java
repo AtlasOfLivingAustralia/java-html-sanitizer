@@ -1,4 +1,4 @@
-// Copyright (c) 2013, Mike Samuel
+// Copyright (c) 2016, Mike Samuel
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -26,37 +26,30 @@
 // ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-package org.owasp.html;
+package org.owasp.html.htmltypes;
 
-import java.io.IOException;
+import org.junit.Test;
 
 import junit.framework.TestCase;
 
-import org.junit.Test;
-import org.owasp.html.examples.UrlTextExample;
+import com.google.common.html.types.SafeHtml;
+import org.owasp.html.HtmlPolicyBuilder;
+import org.owasp.html.PolicyFactory;
 
 @SuppressWarnings("javadoc")
-public final class UrlTextExampleTest extends TestCase {
+public final class SafeHtmlMintTest extends TestCase {
 
   @Test
-  public static void testExample() throws IOException {
-    StringBuilder out = new StringBuilder();
-    UrlTextExample.run(
-        out,
-        "<a href='//www.example.com/'>Examples<br> like this</a> are fun!\n",
-        "<img src='https://www.example.com/example.png'> are fun!\n",
-        "<a href='www.google.com'>This</a> is not a link to google!"
-        );
+  public static final void testSafeHtml() {
+    PolicyFactory f = new HtmlPolicyBuilder()
+        .allowElements("b")
+        .toFactory();
+    SafeHtmlMint m = SafeHtmlMint.fromPolicyFactory(f);
+    assertEquals("", m.sanitize("").getSafeHtmlString());
     assertEquals(
-        ""
-        + "<a href=\"//www.example.com/\">Examples<br /> like this</a>"
-        + " - www.example.com are fun!\n"
-        + "\n"
-        + "<img src=\"https://www.example.com/example.png\" />"
-        + " - www.example.com are fun!\n"
-        + "\n"
-        + "<a href=\"www.google.com\">This</a> is not a link to google!",
-        out.toString());
+        "<b>foo</b>",
+        m.sanitize("<b onmouseover=alert(1337)>foo</b>").getSafeHtmlString());
+    assertEquals("I &lt;3 HTML", m.sanitize("I <3 HTML").getSafeHtmlString());
   }
 
 }

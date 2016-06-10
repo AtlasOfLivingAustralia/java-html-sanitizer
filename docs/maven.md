@@ -3,20 +3,20 @@
 The HTML Sanitizer is available from
 [Maven Central](https://search.maven.org/#browse%7C84770979)
 
-Including among your POMs `<dependencies>` this snippet of XML
+Including among your POMs `<dependencies>` this snippet of XML...
 
 ```Java
 <dependency>
     <groupId>com.googlecode.owasp-java-html-sanitizer</groupId>
     <artifactId>owasp-java-html-sanitizer</artifactId>
-    <version>1.1</version>
+    <version>20160413.1</version>
 </dependency>
 ```
 
-will make the sanitizer available.
+...will make the sanitizer available.
 
 Be sure to change the
-[version](http://docs.codehaus.org/display/MAVEN/Dependency+Mediation+and+Conflict+Resolution#DependencyMediationandConflictResolution-DependencyVersionRanges)
+[version](https://cwiki.apache.org/confluence/display/MAVENOLD/Dependency+Mediation+and+Conflict+Resolution#DependencyMediationandConflictResolution-DependencyVersionRanges)
 to a range suitable to your project.  There are no unstable releases
 in maven.
 Bigger numbers are more recent and the [change log](../change_log.md)
