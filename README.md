@@ -1,3 +1,5 @@
+# DEPRECATED - The original libraries dependencies are now fixed, so use that instead.
+
 # OWASP Java HTML Sanitizer [<img src="https://travis-ci.org/OWASP/java-html-sanitizer.svg">](https://travis-ci.org/OWASP/java-html-sanitizer)
 
 A fast and easy to configure HTML Sanitizer written in Java which lets
